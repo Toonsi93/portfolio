@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Mohamed-Yassine</title>
+    <!-- Favicon URL -->
+    <link rel="icon" type="image/png" href="https://i.imgur.com/NH02oP4.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #020617;
+            color: #ffffff; /* Texte blanc pur pour la lisibilité */
+        }
+
+        #video-background {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -2;
+            object-fit: cover;
+        }
+
+        .video-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.82); /* Sombre pour faire ressortir le blanc */
+            z-index: -1;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #ffffff, #94a3b8);
+            -webkit-background-clip: text; /* Pour Chrome, Safari, Edge */
+            background-clip: text;         /* Propriété standard */
+            -webkit-text-fill-color: transparent;
+        }
+
+        .preview-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            background: #1e293b; /* Couleur de remplacement */
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Vidéo en arrière-plan -->
+    <video autoplay muted loop id="video-background">
+        <source src="video.mp4" type="video/mp4">
+        Votre navigateur ne supporte pas la vidéo.
+    </video>
+    <div class="video-overlay"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 px-6 py-4">
+        <div class="max-w-6xl mx-auto flex justify-between items-center glass rounded-full px-6 py-3">
+            <div class="text-xl font-bold tracking-tighter">707 / BRVZIL</div>
+            <div class="space-x-8 text-xs font-semibold uppercase tracking-widest">
+                <a href="#accueil" class="hover:text-sky-400 transition">Accueil</a>
+                <a href="#projets" class="hover:text-sky-400 transition">Projets</a>
+                <a href="#cyber" class="hover:text-sky-400 transition">Passion</a>
+                <a href="#contact" class="hover:text-sky-400 transition">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="min-h-screen flex items-center justify-center pt-20 px-6">
+        <div class="max-w-4xl text-center">
+            <h1 class="text-6xl md:text-8xl font-extrabold mb-4 tracking-tighter text-white">
+                Mohamed-Yassine
+            </h1>
+            <p class="text-slate-400 font-mono mb-8 uppercase tracking-[0.3em] text-xs">Alias 707 / BRVZIL</p>
+            <p class="text-xl md:text-2xl text-slate-200 mb-10 leading-relaxed font-light">
+                Étudiant en <span class="font-semibold text-white">TSTI2D SIN</span>. 
+                Passionné par le code, j'explore le développement web et la programmation par pure curiosité technique.
+            </p>
+            <div class="flex flex-wrap justify-center gap-6">
+                <a href="#projets" class="bg-white text-black px-10 py-4 rounded-full font-bold hover:bg-slate-200 transition duration-300">
+                    Mes Projets
+                </a>
+                <a href="#cyber" class="glass text-white px-10 py-4 rounded-full font-bold hover:bg-white/10 transition duration-300">
+                    Mon Apprentissage
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Projets Web -->
+    <section id="projets" class="py-24 px-6 max-w-6xl mx-auto">
+        <h2 class="text-4xl font-bold mb-16 text-center text-white tracking-tight">Réalisations Web</h2>
+        <div class="grid md:grid-cols-2 gap-10">
+            <!-- Projet 1 -->
+            <div class="glass-card p-6 rounded-3xl">
+                <img src="sidibou.png" alt="Aperçu Sidibou Said" class="preview-img border border-white/10" onerror="this.src='https://via.placeholder.com/600x400/1e293b/ffffff?text=sidibou.png+manquant'">
+                <h3 class="text-2xl font-bold mb-3 text-white">Sidibou_Said</h3>
+                <p class="text-slate-400 mb-6 font-light">Un espace personnel explorant l'architecture web et les interfaces fluides.</p>
+                <a href="https://toonsi93.github.io/sidibou_said/" target="_blank" class="inline-flex items-center text-sm font-bold uppercase tracking-widest text-white hover:text-sky-400 transition">
+                    Explorer le site
+                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                </a>
+            </div>
+            <!-- Projet 2 -->
+            <div class="glass-card p-6 rounded-3xl">
+                <img src="2bshop.png" alt="Aperçu 2BShop" class="preview-img border border-white/10" onerror="this.src='https://via.placeholder.com/600x400/1e293b/ffffff?text=2bshop.png+manquant'">
+                <h3 class="text-2xl font-bold mb-3 text-white">2BShop</h3>
+                <p class="text-slate-400 mb-6 font-light">Concept d'e-commerce moderne avec une navigation intuitive et un design minimaliste.</p>
+                <a href="https://windozz404.github.io/2bshop/index.html#" target="_blank" class="inline-flex items-center text-sm font-bold uppercase tracking-widest text-white hover:text-sky-400 transition">
+                    Explorer le site
+                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Curiosité & Python -->
+    <section id="cyber" class="py-24 px-6 bg-white/[0.02]">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+            <div class="space-y-6">
+                <h2 class="text-4xl font-bold text-white tracking-tight">Apprendre par la pratique</h2>
+                <p class="text-lg text-slate-300 font-light leading-relaxed">
+                    J'aime comprendre comment les choses fonctionnent sous le capot. C'est pourquoi j'étudie la structure des <span class="text-white font-medium italic">malwares et ransomwares</span> dans des environnements sécurisés. 
+                </p>
+                <p class="text-lg text-slate-300 font-light leading-relaxed">
+                    Ce n'est pas pour prouver quoi que ce soit, mais par pure passion pour la <span class="text-white font-medium">cybersécurité</span>. Analyser ces codes me permet de mieux saisir les enjeux de la protection des données.
+                </p>
+                <div class="p-6 glass rounded-2xl border-l-4 border-white/30">
+                    <p class="italic text-slate-400 text-sm">
+                        "Je code avant tout parce que j'adore créer des outils qui facilitent mon quotidien, notamment avec Python pour automatiser mes tâches sur PC."
+                    </p>
+                </div>
+            </div>
+            <div class="glass-card p-8 rounded-3xl">
+                <div class="flex items-center justify-between mb-6">
+                    <div class="flex space-x-2">
+                        <div class="w-3 h-3 rounded-full bg-red-500/50"></div>
+                        <div class="w-3 h-3 rounded-full bg-yellow-500/50"></div>
+                        <div class="w-3 h-3 rounded-full bg-green-500/50"></div>
+                    </div>
+                    <span class="text-[10px] font-mono text-slate-500">python_script.py</span>
+                </div>
+                <pre class="text-sm font-mono text-white leading-relaxed"><code># Script d'automatisation personnel
+import os
+
+def clean_and_optimize():
+    print("Analyse des fichiers...")
+    # Logique pour simplifier les tâches quotidiennes
+    return "Optimisation terminée."
+
+if __name__ == "__main__":
+    clean_and_optimize()</code></pre>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section id="contact" class="py-24 px-6 max-w-3xl mx-auto text-white">
+        <div class="glass p-10 md:p-14 rounded-[2.5rem] text-center">
+            <h2 class="text-4xl font-bold mb-4">Me Contacter</h2>
+            <p class="text-slate-400 mb-10 font-light">N'hésitez pas à m'envoyer un message pour échanger.</p>
+            <form id="contactForm" class="space-y-6 text-left">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-[10px] uppercase tracking-[0.2em] font-bold mb-3 text-slate-500">Identité</label>
+                        <input type="text" id="name" required placeholder="Nom / Prénom" class="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 focus:bg-white/10 focus:outline-none transition placeholder:text-slate-700">
+                    </div>
+                    <div>
+                        <label class="block text-[10px] uppercase tracking-[0.2em] font-bold mb-3 text-slate-500">Email</label>
+                        <input type="email" id="email" required placeholder="votre@email.com" class="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 focus:bg-white/10 focus:outline-none transition placeholder:text-slate-700">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-[10px] uppercase tracking-[0.2em] font-bold mb-3 text-slate-500">Message</label>
+                    <textarea id="message" rows="5" required placeholder="Votre message ici..." class="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 focus:bg-white/10 focus:outline-none transition placeholder:text-slate-700"></textarea>
+                </div>
+                <button type="submit" id="submitBtn" class="w-full bg-white text-black font-extrabold py-5 rounded-xl transition hover:bg-slate-200 uppercase tracking-widest text-sm">
+                    Envoyer
+                </button>
+            </form>
+            <div id="statusMessage" class="mt-6 text-center hidden"></div>
+        </div>
+    </section>
+
+    <footer class="py-16 text-center text-slate-600 text-[10px] uppercase tracking-[0.3em]">
+        <p>&copy; 2026 Mohamed-Yassine - Apprenti Développeur</p>
+    </footer>
+
+    <script>
+        const WEBHOOK_URL = "https://discord.com/api/webhooks/1469574191169929284/10Jobqvq2JOE3ri3GYNwFnHpe-Q-OMqahAl8nAO-rxzh9H1B6a1EUde1jrqStu3fAG_b";
+
+        document.getElementById('contactForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const statusMessage = document.getElementById('statusMessage');
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            submitBtn.disabled = true;
+            submitBtn.innerText = "ENVOI...";
+
+            const payload = {
+                username: "Portfolio Bot",
+                embeds: [{
+                    title: "Nouveau message reçu",
+                    color: 16777215,
+                    fields: [
+                        { name: "De", value: name, inline: true },
+                        { name: "Email", value: email, inline: true },
+                        { name: "Message", value: message }
+                    ],
+                    timestamp: new Date().toISOString()
+                }]
+            };
+
+            try {
+                const response = await fetch(WEBHOOK_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (response.ok) {
+                    statusMessage.innerText = "Message envoyé !";
+                    statusMessage.className = "mt-6 text-center text-white font-mono text-sm";
+                    document.getElementById('contactForm').reset();
+                } else {
+                    throw new Error();
+                }
+            } catch (error) {
+                statusMessage.innerText = "Erreur de transmission.";
+                statusMessage.className = "mt-6 text-center text-red-500 font-mono text-sm";
+            } finally {
+                statusMessage.classList.remove('hidden');
+                submitBtn.disabled = false;
+                submitBtn.innerText = "Envoyer";
+            }
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
